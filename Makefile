@@ -17,7 +17,7 @@ MANDIR = $(DATAROOTDIR)/man
 CONFIG ?= ../config
 -include configs/$(CONFIG).mk
 
-CFLAGS ?= -O3 -DNDEBUG
+CFLAGS ?= -O3 -march=native -pipe -DNDEBUG
 
 meh: $(OBJFILES)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
